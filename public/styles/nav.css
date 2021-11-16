@@ -6,15 +6,16 @@
   display: flex;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: #320657;
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  z-index: 1;
-  position: absolute;
-  top: 0px;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+
 
 }
 
@@ -25,7 +26,7 @@
 }
 
 .arrow{
-  color: red;
+  color: pink;
 }
 
 
