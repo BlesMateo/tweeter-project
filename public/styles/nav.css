@@ -1,0 +1,31 @@
+.logo{
+  font-family: bungee;
+}
+
+.top{
+  display: flex;
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow{
+  color: red;
+}
+
+
