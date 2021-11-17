@@ -55,7 +55,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form id="post-tweet" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -68,7 +68,7 @@
       <br>
       <br>
       <section>
-        <article class="tweet">
+      <article class="tweet">
           <header>
             <div class="username">
               <img src="https://www.shareicon.net/data/128x128/2016/02/19/721797_people_512x512.png" alt="">
@@ -77,7 +77,7 @@
             <p>@PinkDrink</p>
             </header>
             <div class="tweet-content">
-              <p>Ciao a tutti, spero che abbiate passato una buona giornata.</p>
+              <p>Ciao a tutti spero che abbiate passato una buona giornata</p>
             </div>
             <footer>
               <p>5 minutes ago</p>
@@ -99,7 +99,7 @@
             <p>@MoonlightCeleste</p>
             </header>
             <div class="tweet-content">
-              <p>Hoy fui al parque a recoger pepinos.</p>
+              <p>Hoy fui al parque a recoger pepinos</p>
             </div>
             <footer>
               <p>14 hours ago</p>
@@ -121,7 +121,7 @@
             <p>@BrilliantMind</p>
             </header>
             <div class="tweet-content">
-              <p>Ad astra per aspera.</p>
+              <p>Ad astra per aspera</p>
             </div>
             <footer>
               <p> 2 days ago</p>
@@ -133,6 +133,7 @@
             </footer>
         </article>
       </section>
+      <section id="tweet-container">
     </main>
   </body>
 </html>
