@@ -16,8 +16,7 @@ html {
 
 body {
   color: white;
-  background-color:  rgb(245, 210, 216);
-  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
+  background-color:  #320657;
   font-size: 24px;
   font-family: source sans pro;
 }
@@ -33,8 +32,8 @@ body {
   width: 90%;
   margin: auto;
   flex-direction: column;
-  align-items: center;
   background-color: #320657;
   color: #f4f1ec;
 
   }
+
