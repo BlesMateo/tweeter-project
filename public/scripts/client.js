@@ -67,11 +67,16 @@ $form.on('submit', function(event) {
     if (event.target[0].value.length > 140) {
       console.log("value --->", event.target[0].length)
       return alert("You are writing a tweet, not a book!")
-   }
-   $.ajax("/tweets", {
+    }
+
+    $.ajax("/tweets", {
     method:"post",
     data: $("#post-tweet").serialize(),
-    success: () => {loadTweets()}
+    success: () => {
+    $("#tweet-text").val('');
+    $(".counter").val(140);
+    loadTweets()}
+
   })
 
 });
