@@ -52,6 +52,26 @@ function renderTweets(tweets) {
   }
 }
 
+// const $form = $('form');
+// $(form).on("submit", function(event) {
+//   event.preventDefault();
+//   console.log(event)
+//   if (event.target[0].value === '') {
+//     return alert("Please enter a message");
+//   }
+//   if (event.target[0].value.length > 140) {
+//     return alert("You are writing a tweet, not a book")
+//   }
+
+// });
+
+//Function to escape text and use it inside .html
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 //Function takes in a tweet object returns a tweet <article> element containing the entire HTML structure of the tweet.
 function createTweetElement (tweetData) {
   const {user, content, created_at} = tweetData;
@@ -74,6 +94,7 @@ function createTweetElement (tweetData) {
 </article>`)
   return tweetElementHTML;
 };
+
 
 
 const loadTweets = function() {
