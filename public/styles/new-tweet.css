@@ -23,7 +23,6 @@
 #tweet-text {
   margin-top: 1em;
   min-height: 1em;
-  width: 90vw;
   border-bottom: 3px solid #320657;
   color: #320657;
   font-weight: bolder;
@@ -38,4 +37,13 @@ article.tweet footer div i:hover {
 }
 
 
-
+#error-notification {
+  border-style:ridge;
+  border-color:black;
+  color: #320657;
+  background-color: rgb(247, 128, 146);
+  border-width: 5px;
+  display: none;
+  margin-bottom: 1em;
+  text-align:center;
+}
