@@ -35,7 +35,7 @@ function createTweetElement (tweetData) {
     <span class="userHandle">${user.handle}</span>
     </header>
     <div class="tweet-content">
-    <p>${escape(content.text)}</p>;
+    <p>${escape(content.text)}</p>
     </div>
     <footer>
       <p>${timeago.format(created_at)}</p>
@@ -60,14 +60,17 @@ const loadTweets = function() {
 const $form = $('form');
 $form.on('submit', function(event) {
   event.preventDefault()
-  console.log(event)
-    if (event.target[0].value === '') {
-      return alert("Please enter a message");
+  // console.log(event)
+  $("#error-notification").slideUp();
+  const value = $(this).find("#tweet-text").val();
+    if (!value.trim()) { // event.target[0].value === ''
+      $("#error-notification")
+      .html("⚠ There must be something on your mind! ⚠").slideDown();
      }
-    if (event.target[0].value.length > 140) {
-      console.log("value --->", event.target[0].length)
-      return alert("You are writing a tweet, not a book!")
-    }
+    if (value.length > 140) { //event.target[0].value.length > 140
+      $("#error-notification")// console.log("value --->", event.target[0].length)
+      .html("⚠ Woah there! Take a breather and let's try this again! ⚠ ").slideDown();
+    } else {
 
     $.ajax("/tweets", {
     method:"post",
@@ -78,7 +81,7 @@ $form.on('submit', function(event) {
     loadTweets()}
 
   })
-
+}
 });
 loadTweets();
 });
