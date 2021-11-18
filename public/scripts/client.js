@@ -35,7 +35,7 @@ function createTweetElement (tweetData) {
     <span class="userHandle">${user.handle}</span>
     </header>
     <div class="tweet-content">
-      <p>${content.text}</p>
+    <p>${escape(content.text)}</p>;
     </div>
     <footer>
       <p>${timeago.format(created_at)}</p>
