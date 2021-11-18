@@ -32,7 +32,10 @@
 
 }
 
-
+article.tweet footer div i:hover {
+  color: rgb(247, 128, 146);
+  transition: .3s;
+}
 
 
 
