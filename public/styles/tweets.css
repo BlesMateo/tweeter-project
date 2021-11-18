@@ -6,6 +6,7 @@
   margin-top: 1em;
   margin-bottom: 2em;
   background-color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
   color: #320657;
   width: 100%;
 }
@@ -60,3 +61,4 @@ article.tweet footer div {
   font-size: 1em;
   color: #320657;
 }
+
