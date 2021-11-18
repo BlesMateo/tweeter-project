@@ -50,13 +50,14 @@ function createTweetElement (tweetData) {
 };
 
 
-
+//Function that uses JQuery to make a request to /tweets and receive the tweets as JSON
 const loadTweets = function() {
   $.ajax("/tweets", {method: "GET" }).then(function (tweets) {
     renderTweets(tweets);
   });
 };
 
+//Displaying form validations using JQuery if there is no or excessive form input
 const $form = $('form');
 $form.on('submit', function(event) {
   event.preventDefault()

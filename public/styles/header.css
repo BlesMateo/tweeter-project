@@ -1,3 +1,4 @@
+/* <-- Styling for the background of the profile picture -->*/
 .profile{
   display: flex;
   height: 400px;
@@ -11,6 +12,8 @@
   z-index: 1;
 }
 
+
+/*<-- Outline styling for the profile username -->*/
 .bold {
   color: white;
   text-shadow: -1px -1px 0 #320657, 1px -1px 0 #320657, -1px 1px 0 #320657, 1px 1px 0 #320657;

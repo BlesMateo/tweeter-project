@@ -30,6 +30,11 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!--Disable Viewport Zooming-->
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
 
   <body>
@@ -41,6 +46,7 @@
         <span><i class="fas fa-angle-double-down arrow"></i></span>
     </div>
     </nav>
+    <div class="header">
     <header class="profile">
       <div>
           <img src="/images/profile-hex.png">
@@ -49,11 +55,13 @@
       <div>
           <h2 class="bold"> Bles Mateo</h2>
       </div>
+    </div>
   </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div id= "error-notification"></div>
         <h2>Compose Tweet</h2>
         <form id="post-tweet" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
