@@ -45,18 +45,12 @@ const tweetData = {
 
 //Function takes in an array of tweet objects and then appending each one to the #tweets-container
 function renderTweets(tweets) {
+  $('#tweet-container').empty()
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweet-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
   }
 }
-
-const loadTweets = function() {
-  $.ajax("/tweets", {method: "GET" }).then(function (tweets) {
-    renderTweets(tweets);
-  });
-};
-loadTweets();
 
 //Function takes in a tweet object returns a tweet <article> element containing the entire HTML structure of the tweet.
 function createTweetElement (tweetData) {
@@ -82,6 +76,14 @@ function createTweetElement (tweetData) {
 };
 
 
+const loadTweets = function() {
+  $.ajax("/tweets", {method: "GET" }).then(function (tweets) {
+    renderTweets(tweets);
+  });
+};
+
+
+
 $(document).ready(function() {
   $("#post-tweet").submit(function(event) {
     event.preventDefault();
@@ -91,11 +93,12 @@ $(document).ready(function() {
 
     $.ajax("/tweets", {
       method:"post",
-      data: $("#post-tweet").serialize()
+      data: $("#post-tweet").serialize(),
+      success: () => {loadTweets()}
     })
 
   });
 
-
+  loadTweets();
 });
  // $("#tweet-container").prepend($tweet);
