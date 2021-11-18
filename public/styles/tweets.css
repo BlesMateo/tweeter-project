@@ -12,7 +12,7 @@
 }
 
 article:hover {
-  box-shadow: 5px 5px 0px #534f4f;
+  box-shadow: 5px 5px 0px #000000;
   transition-duration: 0.2s;
 }
 
