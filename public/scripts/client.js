@@ -4,44 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//Data derived from initial-tweets.json
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
 
 //Test or driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": " I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+$(document).ready(function() {
+
 
 //Function takes in an array of tweet objects and then appending each one to the #tweets-container
 function renderTweets(tweets) {
@@ -52,18 +18,6 @@ function renderTweets(tweets) {
   }
 }
 
-// const $form = $('form');
-// $(form).on("submit", function(event) {
-//   event.preventDefault();
-//   console.log(event)
-//   if (event.target[0].value === '') {
-//     return alert("Please enter a message");
-//   }
-//   if (event.target[0].value.length > 140) {
-//     return alert("You are writing a tweet, not a book")
-//   }
-
-// });
 
 //Function to escape text and use it inside .html
 const escape = function (str) {
@@ -103,23 +57,27 @@ const loadTweets = function() {
   });
 };
 
+const $form = $('form');
+$form.on('submit', function(event) {
+  event.preventDefault()
+  console.log(event)
+    if (event.target[0].value === '') {
+      return alert("Please enter a message");
+     }
+    if (event.target[0].value.length > 140) {
+      console.log("value --->", event.target[0].length)
+      return alert("You are writing a tweet, not a book!")
+   }
+   $.ajax("/tweets", {
+    method:"post",
+    data: $("#post-tweet").serialize(),
+    success: () => {loadTweets()}
+  })
 
-
-$(document).ready(function() {
-  $("#post-tweet").submit(function(event) {
-    event.preventDefault();
-    console.log("New Tweet!");
-    // console.log(event.currentTarget.value);
-    console.log(event.target[0].value)
-
-    $.ajax("/tweets", {
-      method:"post",
-      data: $("#post-tweet").serialize(),
-      success: () => {loadTweets()}
-    })
-
-  });
-
-  loadTweets();
 });
- // $("#tweet-container").prepend($tweet);
+loadTweets();
+});
+
+
+
+
