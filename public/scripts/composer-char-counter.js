@@ -2,15 +2,15 @@
 
 $(document).ready(function() {
 
-  $("#tweet-text").on('keyup', function(event) {
-    let charLength = $(this).val().length
+  $("#tweet-text").on('keyup', function() {
+    let charLength = $(this).val().length;
     let charLimit = 140;
     let charLeft = charLimit - charLength;
 
-    console.log(charLeft)
+    console.log(charLeft);
     $(".counter").text(charLeft);
 
-    if(charLeft < 0) {
+    if (charLeft < 0) {
       $(".counter").css("color", "red");
     } else {
       $(".counter").css("color", "white");
