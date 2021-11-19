@@ -19,8 +19,10 @@ Tweeter mobile version
 !["Tweeter Mobile Version"](https://github.com/BlesMateo/tweeter-project/blob/master/docs/Tweeter%20Mobile.png)
 
 Tweeter posted tweets layout on mobile
-!["Mobile Tweeter Posted Message Example](https://github.com/BlesMateo/tweeter-project/blob/master/docs/Mobile%20Message%20Display.png)
+!["Mobile Tweeter Posted Message Example"](https://github.com/BlesMateo/tweeter-project/blob/master/docs/Mobile%20Message%20Display.png)
 
+Error Notification when Empty Form is Submitted
+!["Empty form submission error"](https://github.com/BlesMateo/tweeter-project/blob/master/docs/Empty%20form%20submission%20error.png)
 
 
 ## Dependencies
