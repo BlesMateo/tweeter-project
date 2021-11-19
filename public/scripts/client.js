@@ -40,9 +40,9 @@ function createTweetElement (tweetData) {
     <footer>
       <p>${timeago.format(created_at)}</p>
       <div>
-        <i class="far fa-flag"></i>
+        <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
+        <i class="fas fa-heart"></i>
       </div>
     </footer>
 </article>`)
@@ -65,11 +65,11 @@ $form.on('submit', function(event) {
   const value = $(this).find("#tweet-text").val();
     if (!value.trim()) {
       $("#error-notification")
-      .html("⚠  There must be something on your mind!  ⚠").slideDown();
+      .html("⚠ There must be something on your mind! ⚠").slideDown();
      }
     if (value.length > 140) {
       $("#error-notification")
-      .html("⚠  Woah there! Take a breather and let's try this again!  ⚠").slideDown();
+      .html("⚠ Woah there! Take a breather and let's try this again! ⚠").slideDown();
     } else {
 
     $.ajax("/tweets", {
