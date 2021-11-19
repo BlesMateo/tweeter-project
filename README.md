@@ -30,7 +30,7 @@ Error Notification when Empty Form is Submitted
 - Express
 - Node 5.10.x or above
 - Body-Parser 1.15.2
-- Chance 1.0.2 or
+- Chance 1.0.2
 - Express 4.13.4
 - md5 2.1.0
 - timeago.js 4.0.2
